@@ -1,12 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Container WebApp</title>
+	<title>Container WebApp</title>
+	<link rel="stylesheet" href="app.css">
+	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-    <h1>Hello World</h1>
+	<!-- header division -->
+	<div class=""> 
+		<header class="styleheader">
+			<div class="inheader">
+				<nav class="headnav">
+					<img src="https://d1q6f0aelx0por.cloudfront.net/product-logos/library-docker-logo.png">
+					<a class="cmt">
+						Container Management Tool
+					</a>
+				</nav>
+				<nav class="navbutton">
+					<a class="style_navbtn" href="/">
+						Home
+					</a>
+					<a class="style_navbtn" href="/about">
+						About
+					</a>
+					<a class="style_navbtn" href="">
+						Github
+					</a>
+					<a class="style_navbtn" href="/app">
+						App
+					</a>
+				</nav>
+			</div>
+		</header> 
+	</div>
+
+	<!-- button divison -->
+	<div>
+		<div id="btn">
+			<!-- Control Buttons -->
+
+			<!-- List Containers -->
+	        <button id="clist" class = " button" onclick="contps()"> 
+				List Containers 
+		    </button>
+
+	   	    <!-- list images -->
+		    <button id="clistimg" class = " button" onclick="contimgs()"> 
+			   List Images 
+		    </button>
+	
+	   		<!-- start a conatiner -->
+		   	<button id="cstart" class = " button" onclick="start()"> 
+			   Start Container
+		   	</button>
+
+	   		<!-- stop containers -->
+		   	<button id="cstop" class = " button" onclick="stop()"> 
+			   Stop Container 
+		   	</button>
+		 
+	   		<!-- remove container -->
+		   	<button id="cremove" class = " button" onclick="rem()"> 
+			   Remove Container 
+		    </button>
+
+			<!-- Execute container -->
+			<button id="cexec" class = " button" onclick="coexe()"> 
+				Execute Container 
+			</button>
+
+			<!-- Delete all containers -->
+			<button id="creset" class = " button" onclick=""> 
+				Reset 
+			</button>
+
+		</div>
+	</div>
+
+
+	<div class="boxes">
+		<!-- container launch division-->
+		<div class="box" id="launch">
+
+			<!-- container launch division header-->
+			<div class="launchhead">
+				Launch New Container
+			</div>
+
+
+			<!-- container launch section-->
+			<div class="launchinput">
+				<br />
+				<!-- Container Name -->
+				<label class="labels" for="contname">Container Name :</label>
+				<input type="text" class="choice" id="contname" name="contname" placeholder="Enter Container Name.. ">
+				<br /><br />
+
+				<!-- Container Images choice -->
+				<label class="labels" for="contimages">Choose Container Image :</label>
+
+				<select name="contimages" class="choice" id="contimages">
+				  <option value="centos">Centos</option>
+				  <option value="ubuntu">Ubuntu</option>
+				  <option value="redhat">Redhat</option>
+				</select> 
+				<br /><br />
+
+				<button class="contbtn" id="contlnchbtn" onclick="Cont()"> Launch </button><!-- launch button -->
+			</div>
+	
+		</div>
+
+
+		<!-- start / stop divison -->
+		<div class="startstop" id="startstop">
+			<div class="fakebar">Click on "<span style="color: red;">Start/Stop Container button </span>" to enable this section.</div>
+			<div class="ssinput" id="">
+				<br />
+				<label class="labels" for="contname">Container Name :</label>
+				<input type="text" class="choice" onfocus="hid()" id="conname" name="conname" disabled="true" placeholder="Enter Container Name.. ">
+				<!--<p style="text-align: center;" > Or </p> -->
+				<br /><br/>
+				<label class="labels" for="contcmd">Conmmand:</label>
+				<input type="text" class="choice" onfocus="hidd()" id="concmd" name="concmd " disabled="true" placeholder="Enter Command.. ">
+				<br /><br/>
+				<button class="contbtn" id="strstp" onclick="contexe()" > Done</button>
+				<button class="contbtn" id="str" onclick="contsrt()"> Start</button>
+				<button class="contbtn" id="stp" onclick="contstp()"> Stop</button>
+				<button class="contbtn" id="crm" onclick="contrm()"> Remove</button>
+			</div>
+		</div>
+
+
+		<!-- output division -->
+		<div class="" id="output">
+
+			<!-- output terminal header-->
+			<div class="outputhead">
+				Output will be displayed here.
+			</div>
+
+			<!-- output box-->
+			<div id="outcome">
+			</div>
+		</div>
+	</div>
+
+	<footer>
+
+	</footer>
+
 </body>
 </html>
