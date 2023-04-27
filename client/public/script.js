@@ -8,5 +8,13 @@ function Cont() {
     }
     xhttp.open("GET", "http://localhost:3000/run?contname=" + cn + "&contimages=" + ci);
     xhttp.send();
+}
 
+function contps() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function(){
+        document.getElementById("outcome").innerHTML = this.responseText;
+    }
+    xhttp.open("GET", "http://localhost:3000/ps"); 
+    xhttp.send(); 
 }
