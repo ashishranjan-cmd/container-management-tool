@@ -2,6 +2,8 @@ const express = require("express")
 const app = express()
 
 const path = require('path')
+app.use(express.static(path.join(__dirname, '../client/public')))
+
 app.get('/app', function (req, res, next) {
  
     const options = {
@@ -19,4 +21,4 @@ app.get('/app', function (req, res, next) {
     });
 });
 
-app.listen(3000, () => {console.log("Container tool started")})
+app.listen(3000, () => {console.log("Server started.")})
