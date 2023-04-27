@@ -18,3 +18,12 @@ function contps() {
     xhttp.open("GET", "http://localhost:3000/ps"); 
     xhttp.send(); 
 }
+
+function contimgs(){
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function(){
+        document.getElementById("outcome").innerHTML = this.responseText;
+    }
+    xhttp.open("GET", "http://localhost:3000/imgs"); 
+    xhttp.send(); 
+}

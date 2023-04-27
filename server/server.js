@@ -61,5 +61,11 @@ app.get("/ps", (req,res) => {
     });
 });
 
+app.get("/imgs", (req,res) => {
+    exec('docker images', (err, stdout, stderr) => {
+        console.log("listing all the docker images availabel" + stdout)  // all container images
+        res.send( "<pre>" + stdout + "</pre>");
+    });
+});
 
 app.listen(3000, () => {console.log("Server started.")})
