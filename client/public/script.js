@@ -1,4 +1,8 @@
 function Cont() {
+    document.getElementById("conname").disabled = true;
+    // document.getElementById("conid").disabled = true;
+    document.getElementById("concmd").disabled = true;
+
     var cn = document.getElementById("contname").value;
     var ci = document.getElementById("contimages").value;
     
@@ -11,6 +15,10 @@ function Cont() {
 }
 
 function contps() {
+    document.getElementById("conname").disabled = true;
+    // document.getElementById("conid").disabled = true;
+    document.getElementById("concmd").disabled = true;
+
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function(){
         document.getElementById("outcome").innerHTML = this.responseText;
@@ -20,6 +28,10 @@ function contps() {
 }
 
 function contimgs(){
+    document.getElementById("conname").disabled = true;
+    // document.getElementById("conid").disabled = true;
+    document.getElementById("concmd").disabled = true;
+    
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function(){
         document.getElementById("outcome").innerHTML = this.responseText;
