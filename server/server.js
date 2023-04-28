@@ -103,6 +103,22 @@ app.get("/stp", (req,res) => {
     });
 });
 
+app.get("/ctrm", (req,res) => {
+
+    const conname = req.query.conname;
+
+    exec('docker rm ' + conname , (err, stdout, stderr) => {
+
+        if (err) {
+            console.error(`error: ${err.message}`);
+            res.send("Failed" + "<br/>"+" Can't remove running container.")
+            return;
+          }
+        console.log(stdout)  // executing command
+        res.send( "Container removed with name : <br/>" + stdout);
+    });
+});
+
 
 
 app.listen(3000, () => {console.log("Server started.")})

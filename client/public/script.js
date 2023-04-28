@@ -107,3 +107,28 @@ function contstp(){
         xhttp.open("GET", "http://localhost:3000/stp?conname=" + connm); 
         xhttp.send();
 }
+
+function rem(){
+    document.getElementById("conname").disabled = false;
+    //  document.getElementById("conid").disabled = true;
+    document.getElementById("concmd").disabled = true;
+    var strt = document.getElementById("str");
+    strt.style.display = "none";
+    var strt = document.getElementById("stp");
+    strt.style.display = "none";
+    var don = document.getElementById("strstp");
+    don.style.display = "none";
+    var corm = document.getElementById("crm");
+    corm.style.display = "block";
+}
+
+function contrm(){
+    var connm = document.getElementById("conname").value;
+    const xhttp = new XMLHttpRequest();
+        xhttp.onload = function(){
+            document.getElementById("outcome").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "http://localhost:3000/ctrm?conname=" + connm); 
+        xhttp.send();
+
+}
