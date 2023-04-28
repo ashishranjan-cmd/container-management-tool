@@ -85,4 +85,14 @@ app.get("/exe", (req,res) => {
     });
 });
 
+app.get("/srt", (req,res) => {
+
+    const conname = req.query.conname;
+
+    exec('docker start ' + conname , (err, stdout, stderr) => {
+        console.log("Starting stopped container " + conname + "\n" + stdout)  // start container using name
+        res.send( "A container started with name : "+"<pre>" + stdout + "</pre>");
+    })
+})
+
 app.listen(3000, () => {console.log("Server started.")})

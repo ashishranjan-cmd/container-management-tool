@@ -59,3 +59,42 @@ function contexe(){
         alert("! Invalid input \n Please Enter Container name or ID with Command.")
     }
 }
+
+function start(){
+    document.getElementById("conname").disabled = false;
+    // document.getElementById("conid").disabled = false;
+    document.getElementById("concmd").disabled = true;
+    var strt = document.getElementById("str");
+    strt.style.display = "block";
+    var strt = document.getElementById("stp");
+    strt.style.display = "none";
+    var don = document.getElementById("strstp");
+    don.style.display = "none";
+    var corm = document.getElementById("crm");
+    corm.style.display = "none";
+}
+
+function stop(){
+    document.getElementById("conname").disabled = false;
+    // document.getElementById("conid").disabled = false;
+    document.getElementById("concmd").disabled = true;
+    var strt = document.getElementById("str");
+    strt.style.display = "none";
+    var strt = document.getElementById("stp");
+    strt.style.display = "block";
+    var don = document.getElementById("strstp");
+    don.style.display = "none";
+    var corm = document.getElementById("crm");
+    corm.style.display = "none";
+}
+
+function contsrt(){
+    var connm = document.getElementById("conname").value;
+    const xhttp = new XMLHttpRequest();
+        xhttp.onload = function(){
+            document.getElementById("outcome").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "http://localhost:3000/srt?conname=" + connm); 
+        xhttp.send();
+
+}
