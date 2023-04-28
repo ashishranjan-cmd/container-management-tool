@@ -15,7 +15,10 @@ app.get('/about', function (req, res, next) {
     const fileName = 'about.html';
     res.sendFile(fileName, options, function (err) {
         if (err) {
-            next(err);
+            console.error(`error: ${err.message}`);
+            res.send("Error:" + "<br/>"+" Failed to load page.")
+            return;
+            //next(err);
         } else {
             console.log('Sent:', fileName);
             next();
