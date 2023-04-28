@@ -96,5 +96,14 @@ function contsrt(){
         }
         xhttp.open("GET", "http://localhost:3000/srt?conname=" + connm); 
         xhttp.send();
+}
 
+function contstp(){
+    var connm = document.getElementById("conname").value;
+    const xhttp = new XMLHttpRequest();
+        xhttp.onload = function(){
+            document.getElementById("outcome").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "http://localhost:3000/stp?conname=" + connm); 
+        xhttp.send();
 }
