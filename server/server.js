@@ -68,4 +68,21 @@ app.get("/imgs", (req,res) => {
     });
 });
 
+app.get("/exe", (req,res) => {
+
+    const conname = req.query.conname;
+    const concmd = req.query.concmd;
+
+    exec('docker exec ' + conname + " " + concmd, (err, stdout, stderr) => {
+
+        if (err) {
+            console.error(`error: ${err.message}`);
+            res.send("Command failed" + "<br/>"+"Container not running.")
+            return;
+          }
+        console.log("Executing " + concmd + " command in "+ conname +"\n" + stdout)  // executing command
+        res.send( "<pre>" + stdout + "</pre>");
+    });
+});
+
 app.listen(3000, () => {console.log("Server started.")})
