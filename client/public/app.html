@@ -3,6 +3,7 @@
 <head>
 	<title>Container WebApp</title>
 	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
@@ -34,48 +35,22 @@
 		</header> 
 	</div>
 
-	<!-- button divison -->
-	<div>
-		<div id="btn">
-			<!-- Control Buttons -->
-
-			<!-- List Containers -->
-	        <button id="clist" class = " button" onclick="contps()"> 
-				List Containers 
-		    </button>
-
-	   	    <!-- list images -->
-		    <button id="clistimg" class = " button" onclick="contimgs()"> 
-			   List Images 
-		    </button>
 	
-	   		<!-- start a conatiner -->
-		   	<button id="cstart" class = " button" onclick="start()"> 
-			   Start Container
-		   	</button>
+	<!-- button divison -->
+	<div class="buttons">
+		<button class="button" id="clist" onclick="contps()"><i class="fa-solid fa-bars"></i>List Containers</button>
 
-	   		<!-- stop containers -->
-		   	<button id="cstop" class = " button" onclick="stop()"> 
-			   Stop Container 
-		   	</button>
-		 
-	   		<!-- remove container -->
-		   	<button id="cremove" class = " button" onclick="rem()"> 
-			   Remove Container 
-		    </button>
+		<button class="button" id="clistimg" onclick="contimgs()"><i class="fa-solid fa-square-check"></i></i>List Images</button>
 
-			<!-- Execute container -->
-			<button id="cexec" class = " button" onclick="coexe()"> 
-				Execute Container 
-			</button>
+		<button class="button" id="cstart" onclick="start()"><i class="fa-solid fa-plus"></i></i>Start Containers</button>
 
-			<!-- Delete all containers -->
-			<button id="creset" class = " button" onclick=""> 
-				Reset 
-			</button>
+		<button class="button" id="cstop" onclick="stop()"><i class="fa-solid fa-minus"></i></i>Stop Containers</button>
 
-		</div>
+		<button class="button" id="cremove" onclick="rem()"><i class="fa-solid fa-trash"></i>Remove Containers</button>
+
+		<button class="button" id="cexec" onclick="coexe()"><i class="fa-solid fa-wand-magic"></i></i>Execute Containers</button>
 	</div>
+
 
 
 	<div class="boxes">
@@ -146,9 +121,9 @@
 		</div>
 	</div>
 
-	<footer>
-
-	</footer>
+	<div class="footer">
+		<p>&copy; 2023 Container Management Tool. All rights reserved. | <a href="#">Github</a> | <a href="">Developed by @ashishranjan</a></p>
+	</div>
 
 </body>
 </html>

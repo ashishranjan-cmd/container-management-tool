@@ -26,6 +26,26 @@ app.get('/about', function (req, res, next) {
     });
 });
 
+app.get('/', function (req, res, next) {
+ 
+    const options = {
+        root: path.join(__dirname, '../client/public')
+    };
+ 
+    const fileName = 'homepage.html';
+    res.sendFile(fileName, options, function (err) {
+        if (err) {
+            console.error(`error: ${err.message}`);
+            res.send("Error:" + "<br/>"+" Failed to load page.")
+            return;
+            //next(err);
+        } else {
+            console.log('Sent:', fileName);
+            next();
+        }
+    });
+});
+
 app.get('/app', function (req, res, next) {
  
     const options = {
